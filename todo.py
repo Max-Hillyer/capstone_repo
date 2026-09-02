@@ -1,9 +1,13 @@
 import os
+import sys
 
 tasks = {}
 
 while True:
-    os.system("clear")
+    if (sys.platform) == 'darwin': 
+        os.system("clear")
+    else: os.system('cls')
+
     print("tasks: ")
 
     tasks = dict(sorted(tasks.items(), key=lambda item: item[1]))
