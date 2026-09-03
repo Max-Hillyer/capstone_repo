@@ -4,16 +4,17 @@ import sys
 tasks = {}
 
 while True:
-    if (sys.platform) == 'darwin': 
+    if (sys.platform) == "darwin":
         os.system("clear")
-    else: os.system('cls')
+    else:
+        os.system("cls")
 
     print("tasks: ")
 
     tasks = dict(sorted(tasks.items(), key=lambda item: item[1]))
 
     for t, c in tasks.items():
-        if c < 3:
+        if not (c % 3 == 0):
             print(f"[{'x' if c == 2 else ' '}] {t}")
 
     newTask = input("Enter a task: ")
