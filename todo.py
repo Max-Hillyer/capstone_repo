@@ -18,6 +18,8 @@ while True:
 
     newTask = input("\nEnter a task: ")
 
+    if "__exit__" == str(newTask).lower(): exit(0)
+
     if newTask in tasks:
         tasks[newTask] += 1
     else:
