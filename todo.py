@@ -9,17 +9,20 @@ while True:
     else:
         os.system("cls")
 
-    print("tasks: ")
+    print("Tasks: \n")
 
     tasks = dict(sorted(tasks.items(), key=lambda item: item[1]))
 
     for t, c in tasks.items():
-        if not (c % 3 == 0):
-            print(f"[{'x' if c == 2 else ' '}] {t}")
+        print(f"[{'x' if c == 2 else ' '}] {t}")
 
-    newTask = input("Enter a task: ")
+    newTask = input("\nEnter a task: ")
 
     if newTask in tasks:
         tasks[newTask] += 1
     else:
         tasks[newTask] = 1
+
+    for key in list(tasks):
+        if tasks[key] > 2:
+            del tasks[key]
